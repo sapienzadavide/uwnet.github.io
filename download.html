@@ -2,6 +2,26 @@
 <html>
 
 <head>
+  <!-- <title>Request a Dataset</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendEmail() {
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username : "your_email@gmail.com", // your Gmail email address
+				Password : "your_email_password", // your Gmail password
+				To : "recipient@example.com", // recipient email address
+				From : document.getElementById("email").value,
+				Subject : "Dataset Request",
+				Body : "Name: " + document.getElementById("fname").value + " " + document.getElementById("lname").value + "<br>"
+					+ "Email: " + document.getElementById("email").value + "<br>"
+					+ "Organization: " + document.getElementById("org").value + "<br>"
+					+ "Dataset Version: " + document.getElementById("version").value
+			}).then(
+				message => alert("Thank you for your dataset request!")
+			);
+		}
+	</script> -->
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -112,6 +132,54 @@
           
           <input type="submit" value="Request Dataset">
         </form>
+        <script src="https://apis.google.com/js/platform.js"></script>
+        <script>
+          gapi.load('client:auth2', initClient);
+
+          function initClient() {
+            gapi.client.init({
+              apiKey: 'YOUR_API_KEY',
+              clientId: 'YOUR_CLIENT_ID',
+              discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest'],
+              scope: 'https://www.googleapis.com/auth/gmail.send'
+            }).then(function () {
+              console.log('Gmail API client initialized');
+            });
+          }
+
+          document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            gapi.auth2.getAuthInstance().signIn().then(function () {
+              var name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
+              var email = document.getElementById('email').value;
+              var org = document.getElementById('org').value;
+              var version = document.getElementById('version').value;
+
+              var message = [
+                'To: YOUR_EMAIL_ADDRESS',
+                'Subject: Dataset Request',
+                '',
+                'Name: ' + name,
+                'Email: ' + email,
+                'Organization: ' + org,
+                'Dataset Version: ' + version
+              ].join('\n');
+
+              var base64EncodedMessage = btoa(message);
+              var request = gapi.client.gmail.users.messages.send({
+                'userId': 'me',
+                'resource': {
+                  'raw': base64EncodedMessage
+                }
+              });
+
+              request.execute(function (response) {
+                console.log(response);
+                alert('Your request has been submitted');
+              });
+            });
+          });
+        </script>
       </div>
     </div>
   </section>
