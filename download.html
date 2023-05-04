@@ -24,10 +24,10 @@
 	</script> -->
   <script>
     
-    form.addEventListener('submitRequest', function(event) {
-      event.preventDefault();
-      sendEmail();
-    });
+    // form.addEventListener('submit', function(event) {
+    //   event.preventDefault();
+    //   sendEmail();
+    // });
 
     function sendEmail() {
       const name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
@@ -150,7 +150,7 @@
             <option value="version3">Version 3</option>
           </select><br><br>
           
-          <input type="submitRequest" value="Request Dataset">
+          <input type="submit" onclick="sendEmail()" value="Request Dataset">
         </form>
         
         <!-- <script src="https://apis.google.com/js/platform.js"></script>
