@@ -22,6 +22,26 @@
 			);
 		}
 	</script> -->
+  <script>
+    
+    form.addEventListener('submitRequest', function(event) {
+      event.preventDefault();
+      sendEmail();
+    });
+
+    function sendEmail() {
+      const name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
+      const email = document.getElementById('email').value;
+      const org = document.getElementById('org').value;
+      const version = document.getElementById('version').value;
+      const subject = 'Dataset Request from ' + name;
+      const body = 'Name: ' + name + '\nEmail: ' + email + '\nOrg: ' + org + '\nVersion: ' + version;
+      const mailtoUrl = 'mailto:davide.sapienza@unimore.it?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailtoUrl;
+      alert('Your email has been sent. Thank you for your interest in our dataset!');
+    }
+  </script>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -130,7 +150,7 @@
             <option value="version3">Version 3</option>
           </select><br><br>
           
-          <input type="submit" value="Request Dataset">
+          <input type="submitRequest" value="Request Dataset">
         </form>
         
         <!-- <script src="https://apis.google.com/js/platform.js"></script>
@@ -197,26 +217,7 @@
     </p>
   </section>
   <!-- footer section -->
-  <script>
-    
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      sendEmail();
-    });
-
-    function sendEmail() {
-      const name = document.getElementById('fname').value + ' ' + document.getElementById('lname').value;
-      const email = document.getElementById('email').value;
-      const org = document.getElementById('org').value;
-      const version = document.getElementById('version').value;
-      const subject = 'Dataset Request from ' + name;
-      const body = 'Name: ' + name + '\nEmail: ' + email + '\nOrg: ' + org + '\nVersion: ' + version;
-      const mailtoUrl = 'mailto:davide.sapienza@unimore.it?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailtoUrl;
-      alert('Your email has been sent. Thank you for your interest in our dataset!');
-    }
-  </script>
+  
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
