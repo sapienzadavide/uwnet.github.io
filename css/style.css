@@ -57,7 +57,7 @@ body {
 
 /*header section*/
 .hero_area {
-  background-image: url(../images/dataset-illu2.jpg);
+  background-image: url(../images/benchmark-im.jpg);
   background-size: cover;
 }
 
@@ -239,7 +239,7 @@ a:focus {
   padding: 10px 45px;
   background-color: #171717;
   border: 1px solid #171717;
-  color: #ffffff;
+  color: #19c22f;
   border-radius: 5px;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
