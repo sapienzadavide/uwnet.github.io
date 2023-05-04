@@ -36,10 +36,10 @@
       const version = document.getElementById('version').value;
       const subject = 'Dataset Request from ' + name;
       const body = 'Name: ' + name + '\nEmail: ' + email + '\nOrg: ' + org + '\nVersion: ' + version;
-      const mailtoUrl = 'mailto:davide.sapienza@unimore.it?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      const mailtoUrl = 'mailto:sapienza.dav@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
       window.location.href = mailtoUrl;
-      alert('Your email has been sent. Thank you for your interest in our dataset!');
+      alert(body + ' Your email has been sent. Thank you for your interest in our dataset!');
     }
   </script>
   <!-- Basic -->
