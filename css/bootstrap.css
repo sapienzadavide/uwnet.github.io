@@ -2013,7 +2013,7 @@ textarea.form-control {
   align-items: center;
 }
 
-.form-row label {
+/* .form-row label {
   margin-right: 10px;
   width: 150px;
   text-align: right;
@@ -2021,7 +2021,7 @@ textarea.form-control {
 .form-row input,
 .form-row select {
   flex-grow: 1;
-}
+} */
 
 .form-row > .col,
 .form-row > [class*="col-"] {
