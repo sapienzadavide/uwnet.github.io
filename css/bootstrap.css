@@ -2010,7 +2010,7 @@ textarea.form-control {
   flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
-  align-items: center;
+  /* align-items: center; */
 }
 
 /* .form-row label {
