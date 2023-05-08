@@ -2010,6 +2010,17 @@ textarea.form-control {
   flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
+  align-items: center;
+}
+
+.form-row label {
+  margin-right: 10px;
+  width: 150px;
+  text-align: right;
+}
+.form-row input,
+.form-row select {
+  flex-grow: 1;
 }
 
 .form-row > .col,
