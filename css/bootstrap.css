@@ -1994,16 +1994,9 @@ textarea.form-control {
   height: auto;
 }
 
-/* .form-group {
-  margin-bottom: 1rem;
-} */
 .form-group {
-  display: flex;
-  align-items: center;
-}
-.form-group label {
-  margin-right: 10px;
-}
+  margin-bottom: 1rem;
+} 
 
 .form-text {
   display: block;
