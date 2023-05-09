@@ -149,12 +149,12 @@
       <div class="box">
         <div class="detail-box">
           <p>
-            - RGB
-            - RGBD
-            - Mask 
-            - CAD 
-            - 2D label 
-            - 6D label 
+            <li>RGB</li>
+            <li>Depth Map</li>
+            <li>Mask for single object</li>
+            <li>CAD object models</li>
+            <li>2D ground truth labels</li>
+            <li>6D ground truth labels (rotation matrix 3x3 and translation vector 1x3)</li>
           </p>
         </div>
       </div>
@@ -185,10 +185,24 @@
       <div class="box">
         <div class="detail-box">
           <p>
-            - 4 syntetic sandy background + plain background 
+            <li>4 objects</li>
+            <li>Syntetic data:</li>
+            <ul>
+              <li>different sandy background textures</li>
+              <li>color lights change randomly, with values chosen in specific ranges to avoid black lights</li>
+              <li>lights directions change randomly (lights change their directions starting from the camera position for max 80°)</li>
+              <li>object poses are chosen randomly</li>
+            </ul>
+            <li>Real data:</li>
+            <ul>
+              <li>10 different scenes</li>
+              <li>42.5% of images acquired in 4 different underwater conditions</li>
+              <li>57.5% images acquired in 6 different dry scenes</li>
+            </ul>
+            <!-- - 4 syntetic sandy background + plain background 
             - 11 real-world scenario
             - 4 different object: one obj per image, one instance multi objs per image, multi instances per image 
-            - 2D label and 6D label 
+            - 2D label and 6D label  -->
 
           </p>
         </div>
@@ -203,7 +217,12 @@
       <div class="box">
         <div class="detail-box">
           <p>
-            description
+            <ul>
+              <li>Box</li>
+              <li>Cup</li>
+              <li>Jug</li>
+              <li>Hotstab</li>
+            </ul>
           </p>
         </div>
       </div>
